@@ -119,7 +119,8 @@ const posts = [
 
 function Blogs() {
     return (
-        <div className={'px-6 pt-14 lg:px-8 py-24 sm:py-12'}>
+        <div className={'px-6 pt-14 lg:px-8 py-24 sm:py-12 flex items-center justify-center'}>
+            <div className={'max-w-7xl'}>
             <div className="mx-auto max-w-2xl text-center">
                 <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
                     From the blog
@@ -177,6 +178,7 @@ function Blogs() {
                         </article>
                     </Link>
                 ))}
+            </div>
             </div>
         </div>
     )
