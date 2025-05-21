@@ -9,7 +9,7 @@ import Link from "next/link";
 const navigation = [
     {name: 'Home', href: '/'},
     {name: 'About', href: '/about'},
-    {name: 'Courses', href: '/courses'},
+    {name: 'Courses', href: '/courses', bold: true},
     {name: 'Blogs', href: '/blogs'},
     {name: 'Contacts', href: '/contacts'},
 ]
@@ -42,7 +42,8 @@ const Header: React.FC = () => {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                     {navigation.map((item) => (
-                        <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+                        <Link key={item.name} href={item.href}
+                              className={`font-semibold flex items-center ${item.bold ? 'text-lg text-orange-600' : 'text-sm/4 text-gray-900'}`}>
                             {item.name}
                         </Link>
                     ))}

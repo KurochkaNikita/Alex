@@ -5,9 +5,8 @@ import {BookIcon} from "@/icons/book-icon";
 import {ClockIcon} from "@/icons/clock-icon";
 import {LessonsIcon} from "@/icons/lessons-icon";
 import {PlayIcon} from "@/icons/play-icon";
-import {getValues} from "@/app/courses/devOps/page";
 
-const lessons = [
+const initValue = [
     {
         id: "orientation",
         title: "Orientation: Understanding Where You Are",
@@ -242,13 +241,8 @@ function formatDuration(seconds: number): string {
 
     return h > 0 ? (m > 0 ? `${h} hr ${m} min` : `${h} hr`) : `${m} min`;
 }
-
-export function getValues() {
-    return lessons;
-}
-
 async function DevOps() {
-    const modules =  getValues();
+    const modules =  initValue;
     const lessons = modules.flatMap(({lessons}) => lessons);
     const duration = lessons.reduce(
         (sum, {video}) => sum + (video?.duration ?? 0),
@@ -258,14 +252,14 @@ async function DevOps() {
     return (
         <div className="relative mx-auto max-w-7xl">
             <div
-                className="absolute -inset-x-2 top-0 -z-10 h-80 overflow-hidden rounded-t-2xl mask-b-from-60% sm:h-88 md:h-112 lg:-inset-x-4 lg:h-128">
+                className="absolute -inset-x-2 top-0 -z-10 h-80 overflow-hidden mask-b-from-60% sm:h-88 md:h-112 lg:-inset-x-4 lg:h-128">
                 <img
                     alt=""
                     src="https://assets.tailwindcss.com/templates/compass/hero-background.png"
                     className="absolute inset-0 h-full w-full mask-l-from-60% object-cover object-center opacity-40"
                 />
                 <div
-                    className="absolute inset-0 rounded-t-2xl outline-1 -outline-offset-1 outline-gray-950/10 
+                    className="absolute inset-0 outline-1 -outline-offset-1 outline-gray-950/10
                     {/*dark:outline-white/10*/}
                     "/>
             </div>
