@@ -1,54 +1,8 @@
 import {CheckIcon} from '@heroicons/react/20/solid'
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react'
 import {MinusSmallIcon, PlusSmallIcon} from '@heroicons/react/24/outline'
-
-const faqs = [
-    {
-        question: "What's the best thing about Switzerland?",
-        answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-        question: "What's the best thing about Switzerland?",
-        answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-        question: "What's the best thing about Switzerland?",
-        answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    {
-        question: "What's the best thing about Switzerland?",
-        answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-]
-
-const tiers = [
-    {
-        name: 'FinOps',
-        id: 'tier-hobby',
-        href: '/courses/finOps',
-        priceMonthly: '$29',
-        description: 'Modi dolorem expedita deleniti. Corporis iste qui inventore pariatur adipisci vitae.',
-        features: ['5 products', 'Up to 1,000 subscribers', 'Basic analytics', '48-hour support response time'],
-    },
-    {
-        name: 'DevOps',
-        id: 'tier-team',
-        href: '/courses/devOps',
-        priceMonthly: '$99',
-        description: 'Explicabo quo fugit vel facere ullam corrupti non dolores. Expedita eius sit sequi.',
-        features: [
-            'Unlimited products',
-            'Unlimited subscribers',
-            'Advanced analytics',
-            '1-hour, dedicated support response time',
-            'Marketing automations',
-        ],
-    },
-]
+import {courses} from "@/constants/courses";
+import {faqs} from "@/constants/fags";
 
 function Courses() {
     return (
@@ -86,7 +40,7 @@ function Courses() {
                     <div className="-mt-80">
                         <div className="mx-auto max-w-7xl px-6 lg:px-8">
                             <div className="mx-auto grid max-w-md grid-cols-1 gap-8 lg:max-w-4xl lg:grid-cols-2">
-                                {tiers.map((tier) => (
+                                {courses.map((tier) => (
                                     <div
                                         key={tier.id}
                                         className="flex flex-col justify-between rounded-3xl bg-white p-8 shadow-xl ring-1 ring-gray-900/10 sm:p-10"

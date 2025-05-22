@@ -1,13 +1,8 @@
 import Link from "next/link";
+import {navigation} from "@/constants/navigation";
 
 const footerNavigation = {
-    main: [
-        {name: 'Home', href: '/'},
-        {name: 'About', href: '/about'},
-        {name: 'Courses', href: '/courses'},
-        {name: 'Blogs', href: '/blogs'},
-        {name: 'Contacts', href: '/contacts'},
-    ],
+    main: navigation,
     social: [
         {
             name: 'Facebook',

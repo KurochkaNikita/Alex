@@ -5,14 +5,7 @@ import {useState} from "react";
 import {Dialog, DialogPanel} from '@headlessui/react'
 import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
 import Link from "next/link";
-
-const navigation = [
-    {name: 'Home', href: '/'},
-    {name: 'About', href: '/about'},
-    {name: 'Courses', href: '/courses', bold: true},
-    {name: 'Blogs', href: '/blogs'},
-    {name: 'Contacts', href: '/contacts'},
-]
+import {navigation} from "@/constants/navigation";
 
 const Header: React.FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
